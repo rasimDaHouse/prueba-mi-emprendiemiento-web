@@ -1,0 +1,92 @@
+.navbar {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    &__logo{
+        padding: 1em 2em;
+    }
+    &__list {
+        list-style: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100vw;
+        left: 0;
+        top: 120px;
+        height: 0;
+        overflow-y: hidden;
+        transition: all .4s;
+    }
+    &__item {
+        text-decoration: none;
+        color: white;
+        font-size: 1.4em;
+        text-align: center;
+        font-family: $poppins;
+    }
+    &__link{
+        color: $white;
+        text-decoration: none;
+        padding: 1em;
+        display: block;
+        &:hover,
+        &:active{
+            color: $orange;
+        }
+    }
+    &__item--toggler {
+        text-decoration: none;
+        width: 10%;
+    }
+    &__toggler {
+        padding: 1em 2em;
+        svg{
+            fill: white;
+            width: 35px;
+        }
+        &:hover,
+        &:active{
+            svg{
+                fill: $orange;
+            }
+        }
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    input[type="checkbox"]:checked ~ &__list {
+        height: calc(100vh - 120px);
+    }
+  }
+
+  
+  @media (min-width: 600px) {
+    .navbar{
+        height: 70px;
+        &__logo{
+            width: 40px;
+            padding: 1em 2em;
+        }
+        &__toggler {
+            display: none;
+        }
+        &__list {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            height: auto;
+            width: auto;
+            top: 0;
+            margin-right: 32px;
+        }
+        &__item{
+            font-size: 1em;
+        }
+    }
+  }
+  
